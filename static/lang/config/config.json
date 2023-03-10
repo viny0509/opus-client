@@ -1,0 +1,9 @@
+{
+  "languages": ["ja", "cn", "vn", "it", "id", "ru", "nl", "el", "es", "de", "pt"],
+  "globalVariables": {
+    "appName": "Star Token",
+    "appToken": "Star Token",
+    "appTokenSymbol": "STAR",
+    "appUrl": "http://localhost.com"
+  }
+}

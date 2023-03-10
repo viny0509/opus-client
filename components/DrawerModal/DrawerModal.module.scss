@@ -1,0 +1,16 @@
+.closeIconBox {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px;
+}
+
+.closeIconImg {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+
+.closeIconImg:hover {
+  cursor: pointer;
+}

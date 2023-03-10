@@ -1,0 +1,88 @@
+// THIS FILE GENERATED, DO NOT EDIT !!
+import ReduxService from 'common/redux'
+import { useMemo } from 'react'
+import { useSelector } from 'react-redux'
+import allMessages from 'static/lang/config'
+import config from 'static/lang/config/config.json'
+
+const useTranslate = () => {
+  const language = useSelector((state) => state.language)
+
+  const messages = useMemo(() => {
+    return allMessages[language] || allMessages['en']
+  }, [language])
+
+  /**
+   *
+   * @param {'appName' | 'whitePager' | 'starTokenDetail' | 'nftContractAddress' | 'helpCenter' | 'privacyPolicy' | 'termsOfUse' | 'bookmark' | 'search' | 'error.insufficientBalance' | 'home.title' | 'notification.title' | 'myPage.title' | 'myPage.edit.success' | 'tokenInfo.name' | 'tokenInfo.numberOfCopiesInIssue' | 'tokenInfo.claimed' | 'tokenInfo.unclaimedWithHolder' | 'tokenInfo.burned' | 'nfts.intro.title' | 'nfts.intro.totalVolume' | 'nfts.intro.bestOffer' | 'nfts.intro.registerYourFavorite' | 'nfts.intro.folowOnTwitter' | 'nfts.intro.receiveYourMintCode' | 'nfts.mint.title' | 'nfts.mint.youNeedPayToMint' | 'nfts.mint.mintCode' | 'nfts.mint.network' | 'nfts.mint.storeName' | 'nfts.mint.storeCountry' | 'nfts.mint.storeState' | 'nfts.mint.storeCity' | 'nfts.mint.storeAddress' | 'nfts.mint.tel' | 'nfts.mint.genre' | 'nfts.mint.url' | 'nfts.mint.openHours' | 'nfts.mint.open24Hours' | 'nfts.mint.dayOff' | 'nfts.mint.cryptoPayment' | 'nfts.mint.canPayWithCrypto' | 'nfts.mint.bannerAd' | 'nfts.mint.bannerLink' | 'nfts.mint.egLink' | 'nfts.mint.mintStoreNFT' | 'nfts.mint.avaxGas' | 'filter.allCategory' | 'filter.countItems' | 'filter.yes' | 'filter.no'} key
+   * @param {object | null} variables
+   * @param {string} defaultMessage
+   * @returns
+   */
+  const translate = (key, variables, defaultMessage = '') => {
+    let message = messages
+    if (key.includes('.')) {
+      key.split('.').forEach((k) => {
+        message = message[k]
+      })
+    } else {
+      message = message[key]
+    }
+    if (message) {
+      if (variables && Object.keys(variables).length > 0) {
+        Object.keys(variables).forEach((key) => {
+          message = message.replace(new RegExp(`{${key}}`, 'g'), variables[key])
+        })
+      }
+      if (config?.globalVariables && Object.keys(config?.globalVariables).length > 0) {
+        Object.keys(config?.globalVariables).forEach((key) => {
+          message = message.replace(new RegExp(`{${key}}`, 'g'), config?.globalVariables[key])
+        })
+      }
+      return message
+    }
+    return defaultMessage
+  }
+
+  const renderField = (fieldObj = {}, defaultValue = '') => {
+    return `${fieldObj?.[language] || fieldObj?.['en'] || defaultValue}`
+  }
+
+  return {
+    language,
+    messages,
+    translate,
+    renderField,
+  }
+}
+
+/**
+ * Example: translate('home.title', { title: 'App' })
+ *
+ * @param {('appName' | 'whitePager' | 'starTokenDetail' | 'nftContractAddress' | 'helpCenter' | 'privacyPolicy' | 'termsOfUse' | 'bookmark' | 'search' | 'error.insufficientBalance' | 'home.title' | 'notification.title' | 'myPage.title' | 'myPage.edit.success' | 'tokenInfo.name' | 'tokenInfo.numberOfCopiesInIssue' | 'tokenInfo.claimed' | 'tokenInfo.unclaimedWithHolder' | 'tokenInfo.burned' | 'nfts.intro.title' | 'nfts.intro.totalVolume' | 'nfts.intro.bestOffer' | 'nfts.intro.registerYourFavorite' | 'nfts.intro.folowOnTwitter' | 'nfts.intro.receiveYourMintCode' | 'nfts.mint.title' | 'nfts.mint.youNeedPayToMint' | 'nfts.mint.mintCode' | 'nfts.mint.network' | 'nfts.mint.storeName' | 'nfts.mint.storeCountry' | 'nfts.mint.storeState' | 'nfts.mint.storeCity' | 'nfts.mint.storeAddress' | 'nfts.mint.tel' | 'nfts.mint.genre' | 'nfts.mint.url' | 'nfts.mint.openHours' | 'nfts.mint.open24Hours' | 'nfts.mint.dayOff' | 'nfts.mint.cryptoPayment' | 'nfts.mint.canPayWithCrypto' | 'nfts.mint.bannerAd' | 'nfts.mint.bannerLink' | 'nfts.mint.egLink' | 'nfts.mint.mintStoreNFT' | 'nfts.mint.avaxGas' | 'filter.allCategory' | 'filter.countItems' | 'filter.yes' | 'filter.no')} key
+ * @param {object | null} variables
+ * @param {string} defaultMessage
+ * @returns
+ */
+export const translateFunction = (key, variables, defaultMessage = '') => {
+  const language = ReduxService.getLanguage()
+  let message = allMessages[language] || allMessages['en']
+  if (key.includes('.')) {
+    key.split('.').forEach((k) => {
+      message = message[k]
+    })
+  } else {
+    message = message[key]
+  }
+  if (message) {
+    if (variables && Object.keys(variables).length > 0) {
+      Object.keys(variables).forEach((key) => {
+        message = message.replace(new RegExp(`{${key}}`, 'g'), variables[key])
+      })
+    }
+    return message
+  }
+  return defaultMessage
+}
+
+export default useTranslate

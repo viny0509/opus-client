@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "constants/*": ["./constants/*"],
+      "hooks/*": ["./hooks/*"],
+      "services/*": ["./services/*"],
+      "public/*": ["./public/*"],
+      "pages/*": ["./pages/*"],
+      "components/*": ["./components/*"],
+      "common/*": ["./common/*"],
+      "page-components/*": ["./page-components/*"]
+    }
+  },
+  "include": ["**/*.js"]
+}

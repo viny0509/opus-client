@@ -1,0 +1,15 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.insertFinalNewline": true,
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "language.js$",
+        "cmd": "yarn genarate-language"
+      }
+    ]
+  }
+}

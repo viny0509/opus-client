@@ -1,0 +1,30 @@
+// THIS FILE GENERATED, DO NOT EDIT !!
+import en from '../language'
+import ja from '../sub-language/ja'
+import cn from '../sub-language/cn'
+import vn from '../sub-language/vn'
+import it from '../sub-language/it'
+import id from '../sub-language/id'
+import ru from '../sub-language/ru'
+import nl from '../sub-language/nl'
+import el from '../sub-language/el'
+import es from '../sub-language/es'
+import de from '../sub-language/de'
+import pt from '../sub-language/pt'
+
+const allMessages = {
+  en,
+  ja,
+  cn,
+  vn,
+  it,
+  id,
+  ru,
+  nl,
+  el,
+  es,
+  de,
+  pt,
+}
+
+export default allMessages
