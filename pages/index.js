@@ -26,41 +26,45 @@ const SubText = styled.div`
 const Text = styled.div`
   margin-top: 20px;
   font-weight: 700;
-  font-size: 60px;
-  line-height: 60px;
+  font-size: 50px;
+  line-height: 50px;
   display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   color: #ffffff;
   user-select: none;
   gap: 20px;
 `
 
-const TextWithBackground = styled.div`
+const TextWithBackground = styled.span`
   font-weight: 700;
-  font-size: 40px;
-  line-height: 54px;
-  display: flex;
+  font-size: 30px;
+  line-height: 45px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  height: 60px;
+  height: 50px;
   padding: 0px 30px;
   color: #000000;
+  white-space: nowrap;
   background: #ff571f;
   border: 2px solid #ff571f;
   border-radius: 40px;
 `
 
-const TextWithOutline = styled.div`
+const TextWithOutline = styled.span`
   font-weight: 700;
-  font-size: 40px;
-  line-height: 54px;
-  display: flex;
+  font-size: 30px;
+  line-height: 45px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  height: 60px;
+  white-space: nowrap;
+  height: 50px;
   padding: 0px 30px;
   color: #ffffff;
   border: 2px solid #ff571f;
