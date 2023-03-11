@@ -101,7 +101,7 @@ const MyModal = () => {
   })
 
   useOnClickOutside(modalRef, () => {
-    if (modal?.closeAble) {
+    if (modal?.closeable) {
       dispatch(setModal(null))
     }
   })

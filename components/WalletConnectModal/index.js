@@ -1,6 +1,4 @@
-import ChooseChainWalletV2Modal from 'components/ChooseChainWalletV2Modal'
 import Image from 'components/Image'
-import PrimaryButton from 'components/PrimaryButton'
 import { CONNECTION_METHOD } from 'constants/web3'
 import useModal from 'hooks/useModal'
 import { useDispatch } from 'react-redux'
@@ -14,7 +12,6 @@ const WalletConnectModalContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 15px;
 `
 
 const Title = styled.div`
@@ -34,7 +31,7 @@ const Line = styled.div`
 const Metamask = styled.div`
   width: 100%;
   cursor: pointer;
-  padding: 15px;
+  padding: 45px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +42,8 @@ const Metamask = styled.div`
 
 const WalletConnect = styled.div`
   width: 100%;
-  padding: 15px;
+  padding: 45px;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,26 +52,26 @@ const WalletConnect = styled.div`
   min-height: 150px;
 `
 
-const SubTitle = styled.div`
-  width: 100%;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  text-align: center;
-  color: rgba(6, 25, 39, 0.5);
-`
+// const SubTitle = styled.div`
+//   width: 100%;
+//   font-weight: 400;
+//   font-size: 16px;
+//   line-height: 150%;
+//   text-align: center;
+//   color: rgba(6, 25, 39, 0.5);
+// `
 
-const ButtonContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-`
+// const ButtonContainer = styled.div`
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 12px;
+// `
 
 const WalletConnectModal = () => {
   const dispatch = useDispatch()
-  const { closeModal, openModal } = useModal()
+  const { closeModal } = useModal()
   const onConnectMetamask = () => {
     dispatch(setConnectionMethod(CONNECTION_METHOD.METAMASK))
     closeModal()
@@ -93,11 +91,11 @@ const WalletConnectModal = () => {
         <Title>Metamask</Title>
       </Metamask>
       <Line />
-      <WalletConnect>
-        <Image width={70} height={70} radius='unset' src={images.wallet.walletConnect} />
+      <WalletConnect onClick={onConnectWalletConnect}>
+        <Image cursor='pointer' width={70} height={70} radius='unset' src={images.wallet.walletConnect} />
         <Title>Wallet connect</Title>
-        <SubTitle>Select version to connect</SubTitle>
-        <ButtonContainer>
+        {/* <SubTitle>Select version to connect</SubTitle> */}
+        {/* <ButtonContainer>
           <PrimaryButton onClick={onConnectWalletConnect} width='75px'>
             V1
           </PrimaryButton>
@@ -114,7 +112,7 @@ const WalletConnectModal = () => {
           >
             V2
           </PrimaryButton>
-        </ButtonContainer>
+        </ButtonContainer> */}
       </WalletConnect>
     </WalletConnectModalContainer>
   )

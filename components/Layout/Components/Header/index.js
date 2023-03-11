@@ -105,8 +105,8 @@ const Header = ({ mobile = true, desktop = true }) => {
       openModal({
         content: <WalletConnectModal />,
         header: true,
-        width: '600px',
-        radius: '10px',
+        width: '500px',
+        radius: '20px',
       })
     }
   }
