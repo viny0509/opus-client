@@ -8,7 +8,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: #121212;
   height: 100%;
 `
@@ -100,7 +99,7 @@ const NFT = () => {
   return (
     <Container>
       <PageWrapper>
-        <PageTitle>NFT</PageTitle>
+        <PageTitle className='MT40'>NFT</PageTitle>
         <NFTInfoContainer className='MT40'>
           <NFTImageContainer>
             <NFTImage src={images.nftImage} />

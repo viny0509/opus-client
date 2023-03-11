@@ -6,7 +6,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: #121212;
   height: 100%;
   padding-bottom: 80px;
@@ -62,7 +61,7 @@ const Marketplace = () => {
   return (
     <Container>
       <PageWrapper>
-        <PageTitle>Project</PageTitle>
+        <PageTitle className='MT40'>Project</PageTitle>
         <Row className='MT40'>
           <ItemContainer width='calc(50% - 25px / 2)'>
             <SubText>Currently avaialbe </SubText>

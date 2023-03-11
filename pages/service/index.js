@@ -6,7 +6,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: #121212;
   height: 100%;
   padding-bottom: 80px;
@@ -58,7 +57,7 @@ const Marketplace = () => {
   return (
     <Container>
       <PageWrapper>
-        <PageTitle>Service</PageTitle>
+        <PageTitle className='MT40'>Service</PageTitle>
         <StepByStep className='MT40' src={images.service.stepByStep} />
         <InfoBlock className='MT40'>
           <Text>How to connect your wallet?</Text>

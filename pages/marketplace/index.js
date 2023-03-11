@@ -8,7 +8,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background: #121212;
   height: 100%;
 `
@@ -113,7 +112,7 @@ const Marketplace = () => {
   return (
     <Container>
       <PageWrapper>
-        <PageTitle>Marketplace</PageTitle>
+        <PageTitle className='MT40'>Marketplace</PageTitle>
         <ListItem className='MT40'>
           <ItemContainer>
             <ItemWrapper>
