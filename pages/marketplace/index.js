@@ -1,6 +1,7 @@
 import images from 'common/images'
 import PageWrapper from 'components/PageWrapper'
 import PrimaryButton from 'components/PrimaryButton'
+import { useRouter } from 'next/router'
 import styled, { css } from 'styled-components'
 
 const Container = styled.div`
@@ -108,6 +109,7 @@ const CommingSoonContainer = styled.div`
 `
 
 const Marketplace = () => {
+  const router = useRouter()
   return (
     <Container>
       <PageWrapper>
@@ -120,7 +122,7 @@ const Marketplace = () => {
                   <SubText>Membership</SubText>
                   <Text>The N Resort</Text>
                 </TopLeftContainer>
-                <PrimaryButton>Get NFTs →</PrimaryButton>
+                <PrimaryButton onClick={() => router.push(`/marketplace/1`)}>Get NFTs →</PrimaryButton>
               </LeftContainer>
               <img src={images.nftSample} />
             </ItemWrapper>

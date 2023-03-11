@@ -139,7 +139,7 @@ const Header = ({ mobile = true, desktop = true }) => {
       >
         {(matches) => (
           <>
-            {matches.small && <HeaderContainer $show={mobile}>Header Mobile</HeaderContainer>}
+            {matches.small && <HeaderContainer $show={mobile}></HeaderContainer>}
             {matches.large && (
               <>
                 <HeaderContainer $show={desktop}>
@@ -149,7 +149,9 @@ const Header = ({ mobile = true, desktop = true }) => {
                     </LeftSide>
                     <RightSide>
                       <LinkContainer>
-                        <ActiveLink href='/marketplace'>Marketplace</ActiveLink>
+                        <ActiveLink href='/marketplace' routeActive={['/marketplace/[id]']}>
+                          Marketplace
+                        </ActiveLink>
                         <ActiveLink href='/project'>Project</ActiveLink>
                         <ActiveLink href='/service'>Service</ActiveLink>
                       </LinkContainer>

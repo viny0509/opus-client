@@ -15,6 +15,7 @@ const images = {
   icNext: '/assets/images/Icons/next.svg',
   icPrev: '/assets/images/Icons/prev.svg',
   icCopy: '/assets/images/Icons/icCopy.svg',
+  nftImage: '/assets/images/nft-image.png',
   wallet: {
     metamask: '/assets/images/Icons/wallet/metamask.png',
     walletConnect: '/assets/images/Icons/wallet/walletConnect.png',

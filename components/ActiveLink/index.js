@@ -41,14 +41,13 @@ const ActiveLinkDivContainer = styled.div`
 const ActiveLink = ({ href = '', routeActive = [], children, className = '', onClick, ...rest }) => {
   const route = useRouter()
   const routes = [...routeActive.map((item) => lowerCase(item)), href.toLowerCase()]
-
   if (onClick) {
     return (
       <ActiveLinkDivContainer
         onClick={() => {
           onClick()
         }}
-        className={`${className} ${routes.includes(lowerCase(route.asPath)) ? 'active' : ''}`}
+        className={`${className} ${routes.includes(lowerCase(route.asPath)) || routes.includes(lowerCase(route.pathname)) ? 'active' : ''}`}
         {...rest}
       >
         {children}
@@ -58,7 +57,11 @@ const ActiveLink = ({ href = '', routeActive = [], children, className = '', onC
 
   return (
     <Link href={href}>
-      <ActiveLinkContainer className={`${className} ${routes.includes(lowerCase(route.asPath)) ? 'active' : ''}`} href={href} {...rest}>
+      <ActiveLinkContainer
+        className={`${className} ${routes.includes(lowerCase(route.asPath)) || routes.includes(lowerCase(route.pathname)) ? 'active' : ''}`}
+        href={href}
+        {...rest}
+      >
         {children}
       </ActiveLinkContainer>
     </Link>

@@ -32,6 +32,8 @@ const Body = styled.div`
   scrollbar-width: none;
   min-height: ${(props) => props.minDesktop || 'calc(100vh - 70px)'};
   @media screen and (max-width: 768px) {
+    // TODO Hide one mobile => remove later
+    display: none;
     min-height: ${(props) => props.minMobile || 'calc(100vh - 120px)'};
   }
 `
