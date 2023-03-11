@@ -19,6 +19,15 @@ const images = {
     metamask: '/assets/images/Icons/wallet/metamask.png',
     walletConnect: '/assets/images/Icons/wallet/walletConnect.png',
   },
+  project: {
+    nftMember: '/assets/images/project/nft-member.png',
+    buyWithCrypto: '/assets/images/project/buy-with-crypto.png',
+    nftLuckyBox: '/assets/images/project/nft-lucky-box.png',
+    nftRevive: '/assets/images/project/nft-revive.png',
+  },
+  service: {
+    stepByStep: '/assets/images/service/step-by-step.png',
+  },
 }
 
 export default images

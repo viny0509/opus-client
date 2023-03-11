@@ -7,7 +7,7 @@ const MainLayoutContainer = styled.div`
   min-height: ${(props) => props.height};
   min-width: 100vw;
   display: flex;
-  background: #fefbff;
+  background: #121212;
   background-size: cover;
 `
 
@@ -46,8 +46,8 @@ const Layout = ({ children, headerMobile = true, headerDesktop = true, footerMob
       total += 0
     }
 
-    return `${window.innerHeight - total}px`
-  }, [headerDesktop, headerMobile])
+    return `calc(100vh - ${total}px)`
+  }, [headerDesktop, footerDesktop])
 
   const minHeightBodyMobile = useMemo(() => {
     let total = 0

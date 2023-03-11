@@ -28,7 +28,7 @@ const AppBackgroundWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: #121212;
 `
 
 const InitData = () => {
